@@ -23,6 +23,9 @@ import { MatRadioModule} from '@angular/material/radio';
 export class CreateRecipeFormComponent {
   recipeItem: any = {
     title: '',
+    description: '',
+    image_url: '',
+    isVegetarian: '',
   };
 
   onSubmit() {

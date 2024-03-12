@@ -1,0 +1,130 @@
+<div class="flex justify-between h-screen items-center overflow-hidden">
+  <div class="container">
+    <div class="cover" [ngClass]="{ 'rotate-active': isRegistered }">
+      <div class="front">
+        <img
+          src="https://images.pexels.com/photos/8951050/pexels-photo-8951050.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+        <div class="text">
+          <span class="text-1">
+            Share, Savor, and Create: Your Recipe Haven Awaits!
+          </span>
+          <span class="text-2"> Let's get connected </span>
+        </div>
+      </div>
+      <div class="back">
+        <img
+          src="https://images.pexels.com/photos/2403391/pexels-photo-2403391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="form h-full">
+      <div class="form-content h-full">
+        <div class="signup-form">
+          <h1 class="text-lg font-bold text-center pb-8">Signup</h1>
+          <form
+            (ngSubmit)="handleRegistration()"
+            class="p-2 rounded-lg shadow-md"
+          >
+            <div [formGroup]="registerForm" class="mb-4">
+              <mat-form-field class="w-full" appearance="fill">
+                <mat-label class="text-gray-200">Full Name</mat-label>
+                <input
+                  matInput
+                  placeholder="full name ..."
+                  id="fullName"
+                  name="fullName"
+                  formControlName="fullName"
+                  class="mt-1 focus:shadow-outline"
+                />
+              </mat-form-field>
+            </div>
+
+            <div [formGroup]="registerForm" class="mb-4">
+              <mat-form-field class="w-full" appearance="fill">
+                <mat-label class="text-gray-200">Email</mat-label>
+                <input
+                  matInput
+                  placeholder="example@email.com ..."
+                  id="email"
+                  name="email"
+                  formControlName="email"
+                  class="mt-1 focus:shadow-outline"
+                />
+              </mat-form-field>
+            </div>
+
+            <div [formGroup]="registerForm" class="mb-4">
+              <mat-form-field class="w-full" appearance="fill">
+                <mat-label class="text-gray-200">Password</mat-label>
+                <input
+                  matInput
+                  type="password"
+                  id="password"
+                  name="password"
+                  formControlName="password"
+                  class=" mt-1 focus:shadow-outline"
+                />
+              </mat-form-field>
+            </div>
+
+            <div>
+              <button class="w-full" mat-raised-button color="primary" type="submit">
+                Signin
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="form h-full">
+        <div class="form-content h-full">
+          <div class="login-form">
+            <h1 class="text-lg font-bold text-center pb-8">Login</h1>
+            <form
+              (ngSubmit)="handleLogin()"
+              class="p-2 rounded-lg shadow-md"
+            >
+
+              <div [formGroup]="loginForm" class="mb-4">
+                <mat-form-field class="w-full" appearance="fill">
+                  <mat-label class="text-gray-200">Email</mat-label>
+                  <input
+                    matInput
+                    placeholder="example@email.com ..."
+                    id="email"
+                    name="email"
+                    formControlName="email"
+                    class="mt-1 focus:shadow-outline"
+                  />
+                </mat-form-field>
+              </div>
+  
+              <div [formGroup]="registerForm" class="mb-4">
+                <mat-form-field class="w-full" appearance="fill">
+                  <mat-label class="text-gray-200">Password</mat-label>
+                  <input
+                    matInput
+                    type="password"
+                    id="password"
+                    name="password"
+                    formControlName="password"
+                    class=" mt-1 focus:shadow-outline"
+                  />
+                </mat-form-field>
+              </div>
+  
+              <div>
+                <button class="w-full" mat-raised-button color="primary" type="submit">
+                  Signin
+                </button>
+              </div>
+            </form>
+            <div></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
