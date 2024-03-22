@@ -2,7 +2,14 @@
 
   <div class="min-h-[91vh]">
     <app-navbar />
-    <app-mainpanel />
+
+    <!-- if user is logged in render the main panel component else render authentication -->
+    @if(user){
+      <app-mainpanel />
+    }
+    @else {
+      <app-auth />
+    }
   </div>
 
   <div class="flex justify-center bg-black bg-opacity-20">
