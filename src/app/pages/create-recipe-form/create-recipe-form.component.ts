@@ -4,7 +4,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
+import { RecipeServiceService } from '../../services/Recipe/recipe-service.service';
 
 @Component({
   selector: 'app-create-recipe-form',
@@ -21,14 +22,20 @@ import { MatRadioModule} from '@angular/material/radio';
   styleUrl: './create-recipe-form.component.css',
 })
 export class CreateRecipeFormComponent {
+  constructor(private recipeService: RecipeServiceService) {}
+
   recipeItem: any = {
     title: '',
     description: '',
-    image_url: '',
-    isVegetarian: '',
+    image: '',
+    vegetarian: '',
   };
 
   onSubmit() {
-    console.log('values', this.recipeItem);
+    // console.log('values', this.recipeItem);
+    this.recipeService.createRecipe(this.recipeItem).subscribe({
+      next: (data) => console.log('created ', data),
+      error: (error) => console.log('error ', error),
+    });
   }
 }

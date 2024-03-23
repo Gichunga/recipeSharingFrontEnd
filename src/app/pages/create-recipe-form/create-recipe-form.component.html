@@ -37,7 +37,7 @@
           placeholder="image url ..."
           id="image_url"
           name="image_url"
-          [(ngModel)]="recipeItem.image_url"
+          [(ngModel)]="recipeItem.image"
           class="py-2 px-2 mt-1 focus:shadow-outline"
         />
       </mat-form-field>
@@ -47,11 +47,11 @@
       <mat-radio-group
       id="isVegetarian"
       name="isVegetarian"
-      [(ngModel)]="recipeItem.isVegetarian"
+      [(ngModel)]="recipeItem.vegetarian"
       aria-label="Select an option"
       >
-        <mat-radio-button value="veg">Vegetarian</mat-radio-button>
-        <mat-radio-button value="non_veg">Non Vegetarian</mat-radio-button>
+        <mat-radio-button value="true">Vegetarian</mat-radio-button>
+        <mat-radio-button value="false">Non Vegetarian</mat-radio-button>
       </mat-radio-group>
     </div>
 

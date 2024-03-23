@@ -1,5 +1,5 @@
 <div class="p-2 w-[27rem]">
-    <h2 mat-dialog-title class="text-center">Edit Recipe :</h2>
+    <h2 mat-dialog-title class="text-center">Edit Recipe : {{ recipeItem.id }}</h2>
     <form (ngSubmit)="onSubmit()" class="p-2 rounded-lg shadow-md">
       <div class="mb-4">
         <mat-form-field class="w-full" appearance="fill">
@@ -35,9 +35,9 @@
           <input
             matInput
             placeholder="image url ..."
-            id="image_url"
-            name="image_url"
-            [(ngModel)]="recipeItem.image_url"
+            id="image"
+            name="image"
+            [(ngModel)]="recipeItem.image"
             class="py-2 px-2 mt-1 focus:shadow-outline"
           />
         </mat-form-field>
@@ -45,13 +45,13 @@
   
       <div class="mb-4">
         <mat-radio-group
-        id="isVegetarian"
-        name="isVegetarian"
-        [(ngModel)]="recipeItem.isVegetarian"
+        id="vegetarian"
+        name="vegetarian"
+        [(ngModel)]="recipeItem.vegetarian"
         aria-label="Select an option"
         >
-          <mat-radio-button value="veg">Vegetarian</mat-radio-button>
-          <mat-radio-button value="non_veg">Non Vegetarian</mat-radio-button>
+          <mat-radio-button value="true">Vegetarian</mat-radio-button>
+          <mat-radio-button value="false">Non Vegetarian</mat-radio-button>
         </mat-radio-group>
       </div>
   
